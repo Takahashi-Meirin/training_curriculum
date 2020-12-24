@@ -14,7 +14,6 @@ class CalendarsController < ApplicationController
 
   private
 
-  # 日付と予定のデータを取得
   def plan_params
     params.require(:plan).permit(:date, :plan)
   end
