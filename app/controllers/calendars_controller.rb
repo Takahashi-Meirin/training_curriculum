@@ -31,11 +31,15 @@ class CalendarsController < ApplicationController
 
     7.times do |x|
       today_plans = []
+
+      #日付を１つずつ進める
       plans.each do |plan|
         today_plans.push(plan.plan) if plan.date == @todays_date + x
       end
 
-      wday_num = Date.today.wday
+      # 曜日を1つずつ回す
+      wday_num = Date.today.wday + x
+      # 0〜6に数値をおさめる
       if wday_num >= 7
         wday_num = wday_num -7
       end
